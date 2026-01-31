@@ -14,7 +14,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"email\":\"amit@brain-mentors.com\",\n    \"password\":\"111111\",\n    \"name\":\"Amit\"\n}",
+          "raw": "{\n    \"email\":\"ram@brain-mentors.com\",\n    \"password\":\"111111\",\n    \"name\":\"Ram\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -40,7 +40,12 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"email\":\"amit@brain-mentors.com\",\n    \"password\":\"111111\",\n    \"name\":\"Amit\"\n}"
+          "raw": "{\n    \"email\":\"amit@brain-mentors.com\",\n    \"password\":\"99999\"\n    \n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         },
         "url": {
           "raw": "{{BASE_URL}}/login",
@@ -58,7 +63,16 @@
       "name": "All Users",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/all-users",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "all-users"
+          ]
+        }
       },
       "response": []
     },
@@ -66,7 +80,70 @@
       "name": "Home",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SaveResume",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\":\"Amit\",\n  \"resumeText\":\"I know Java, Spring Boot, MySQL, REST API, Postman\",\n  \"jdText\":\"Java,Spring Boot,Hibernate,JPA,MySQL,Git\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/resumeengine/save-resume",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "resumeengine",
+            "save-resume"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ComputeScore",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/resumeengine/compute-score/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "resumeengine",
+            "compute-score",
+            "1"
+          ]
+        }
       },
       "response": []
     }
